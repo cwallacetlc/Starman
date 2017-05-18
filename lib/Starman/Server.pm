@@ -259,7 +259,7 @@ sub process_request {
             }
         }
         elsif ( $proto && $proto eq 'HTTP/1.1' ) {
-            if ( $connection && $connection =~ /^close$/i ) {
+            if ( $connection && $connection =~ /\bclose\b/i ) {
                 $self->{client}->{keepalive} = 0;
             }
             else {
